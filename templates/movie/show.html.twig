@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}{{ movie.title }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>{{ movie.title }}</h1>
+        <div class="movie-body">{{ movie.body }}</div>
+        <hr>
+        <a href="/">Go back</a>
+    </div>
+{% endblock %}

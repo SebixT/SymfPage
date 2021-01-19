@@ -5,6 +5,31 @@
 
 {% block body %}
 <div class="container">
-TEST
+    <section class="movies-container">
+    {% if movies %}
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Movie title</th>
+            <th>Action</th>
+        </tr> 
+    </thead>
+    <tbody>
+        {% for movie in movies %}
+            <tr>
+                <td>
+                    {{movie.title}}
+                </td>
+                <td>
+                    <a href="/movie/{{ movie.id }}" class="btn btn-dark">Show</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    {% else %}
+        <p>No movies to display</p>
+    {% endif %}
+    </section>
 </div>
 {% endblock %}
